@@ -12,11 +12,13 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { routingarray } from './app.routing';
 import { UserServiceService } from './homepage/user-service.service';
+import { ExppageComponent } from './exppage/exppage.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
-    NavbarComponent
+    NavbarComponent,
+    ExppageComponent
   ],
   imports: [
     BrowserModule,
@@ -24,10 +26,10 @@ import { UserServiceService } from './homepage/user-service.service';
     routingarray,
     BrowserAnimationsModule,
     NoopAnimationsModule,
-    MatButtonModule, MatCheckboxModule,
+    MatButtonModule, 
+    MatCheckboxModule,
     MatFormFieldModule,
     FormsModule,
-    
     MatSortModule,MatInputModule
     ,MatPaginatorModule,
     MatOptionModule,

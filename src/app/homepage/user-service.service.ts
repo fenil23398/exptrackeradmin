@@ -35,11 +35,3 @@ import {HttpClient,HttpHeaders} from "@angular/common/http";
     return this.http.put(this.url+id, fd)
   }
 }
-
-
-// @Injectable()
-// export class UserServiceService {
-
-//   constructor() { }
-
-// }

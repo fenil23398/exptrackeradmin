@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <base href="/">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -81,23 +82,10 @@
       showLeftPush = document.getElementById( 'showLeftPush' ),
       body = document.body;
       
-    showLeftPush.onclick = function() {
-      classie.toggle( this, 'active' );
-      classie.toggle( body, 'cbp-spmenu-push-toright' );
-      classie.toggle( menuLeft, 'cbp-spmenu-open' );
-      disableOther( 'showLeftPush' );
-    };
+   
     
-
-    function disableOther( button ) {
-      if( button !== 'showLeftPush' ) {
-        classie.toggle( showLeftPush, 'disabled' );
-      }
-    }
   </script>
-	<script src="assets/js/jquery.nicescroll.js"></script>
-	<script src="assets/js/scripts.js"></script>
-	<!--//scrolling js-->
+
 	<!-- Bootstrap Core JavaScript -->
    <script src="assets/js/bootstrap.js"> </script>
 </body>
