@@ -1,61 +1,70 @@
- 
+
 <div id="page-wrapper">
-  <div>
-    <!-- <div class="row-one"> -->
-       <!-- <div class="col-md-4 widget"> -->
-      
-          
-     <div class="clearfix">  
-      </div>
-       <!-- <div class="example-container mat-elevation-z8">  -->
+    <div>
+        <!-- <div class="row-one"> -->
+        <!-- <div class="col-md-4 widget"> -->
+
+
+        <div class="clearfix">
+        </div>
+        <!-- <div class="example-container mat-elevation-z8">  -->
         <!-- <div class="example-header">
           </div> -->
-          <div id="rightContent">
-          <mat-form-field>
-            <input matInput (keyup)="applyFilter($event.target.value)" >
-          </mat-form-field>
-        
-                          <div class="example-container mat-elevation-z8">
-                              <mat-table #table [dataSource]="dataSource" matSort>
-                                      <ng-container matColumnDef=" ">
-                                              <mat-header-cell *matHeaderCellDef >  </mat-header-cell>
-                                              <mat-cell *matCellDef="let element"> <input type="checkbox" > </mat-cell>
-                                            </ng-container>
-                                  <ng-container matColumnDef="user_email">
-                                  <mat-header-cell *matHeaderCellDef mat-sort-header>Mail ID </mat-header-cell>
-                                  <mat-cell *matCellDef="let element"> {{element.user_email}} </mat-cell>
-                                </ng-container>
-                              <ng-container matColumnDef="user_name">
-                                  <mat-header-cell *matHeaderCellDef mat-sort-header>Name </mat-header-cell>
-                                  <mat-cell *matCellDef="let element"> {{element.user_name}} </mat-cell>
-                                </ng-container>
-                                <!-- Name Column -->
-                                <ng-container matColumnDef="user_mob_no">
-                                  <mat-header-cell *matHeaderCellDef mat-sort-header> Mobile no </mat-header-cell>
-                                  <mat-cell *matCellDef="let element"> {{element.user_mob_no}} </mat-cell>
-                                </ng-container>
-                            
-                                <!-- Weight Column -->
-                                <!-- Symbol Column -->
-                               
-                                <ng-container matColumnDef="Action">
-                                  <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
-                                  <mat-cell *matCellDef="let element"><button mat-icon-button >
+        <div id="rightContent">
+            <mat-form-field>
+                <input matInput (keyup)="applyFilter($event.target.value)">
+            </mat-form-field>
+            <div align="center">
+                <h1 class="page-header"><i class="fa fa-user"></i> User Table
+                </h1>
+            </div><br>
+
+            <div class="example-container mat-elevation-z8">
+                <mat-table #table [dataSource]="dataSource" matSort>
+                    <ng-container matColumnDef=" ">
+                        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> <input type="checkbox"> </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="user_email">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Mail ID </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.user_email}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="user_name">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Name </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.user_name}} </mat-cell>
+                    </ng-container>
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="user_mob_no">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> Mobile no </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.user_mob_no}} </mat-cell>
+                    </ng-container>
+
+                    <!-- Weight Column -->
+                    <!-- Symbol Column -->
+
+                    <ng-container matColumnDef="Action">
+                        <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+                        <mat-cell *matCellDef="let element"><button mat-icon-button>
                                       <mat-icon >edit</mat-icon>
-                                    </button><button mat-icon-button >
+                                    </button><button mat-icon-button>
                                       <mat-icon >delete</mat-icon>
-                                    </button>  </mat-cell>
-                                    
-                                    
-                                </ng-container>
-                            
-                                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-                                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-                              </mat-table>
-                              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>  
-                          </div>
-                          
-     </div>
-     
-</div>  
+                                    </button> </mat-cell>
+
+
+                    </ng-container>
+
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div><br><br>
+            <div align="center">
+                <button routerLink="/adduser" mat-raised-button color="primary"><i class="fa fa-user"></i> Add Student</button>
+                <button mat-raised-button color="warn" ><i class="fa fa-remove"> </i> Delete Selected</button>
+                <button mat-raised-button color="primary" onClick="window.print()"><i class="fa fa-print"> </i> Print Data</button>
+
+            </div>
+        </div>
+
+    </div>
 </div>

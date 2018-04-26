@@ -13,12 +13,22 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { routingarray } from './app.routing';
 import { UserServiceService } from './homepage/user-service.service';
 import { ExppageComponent } from './exppage/exppage.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { NotesComponent } from './notes/notes.component';
+import { RemindersComponent } from './reminders/reminders.component';
+import { ExpDbService } from './exppage/exp-db.service';
+import { ReminderDbService } from './reminders/reminder-db.service';
+import { NotesDbService } from './notes/notes-db.service';
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
     NavbarComponent,
-    ExppageComponent
+    ExppageComponent,
+    AddUserComponent,
+    NotesComponent,
+    RemindersComponent,
+ 
   ],
   imports: [
     BrowserModule,
@@ -29,9 +39,7 @@ import { ExppageComponent } from './exppage/exppage.component';
     MatButtonModule, 
     MatCheckboxModule,
     MatFormFieldModule,
-    FormsModule,
-    MatSortModule,MatInputModule
-    ,MatPaginatorModule,
+    FormsModule,MatSortModule,MatInputModule,MatPaginatorModule,
     MatOptionModule,
     MatIconModule,
     MatTableModule
@@ -39,6 +47,9 @@ import { ExppageComponent } from './exppage/exppage.component';
  
   providers: [
     UserServiceService,
+    ExpDbService,
+    ReminderDbService,
+    NotesDbService
   ],
   bootstrap: [AppComponent]
 })
