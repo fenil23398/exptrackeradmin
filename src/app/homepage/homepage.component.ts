@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { UserServiceService } from './user-service.service';
 import { Users } from './user_model';
+import { UpdateUserComponent } from '../update-user/update-user.component';
 import { Router } from '@angular/router';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 
@@ -12,6 +13,7 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 
 })
 export class HomepageComponent implements OnInit {
+  public delarr:Users[];
   user: Users[] = [];
   dataSource: MatTableDataSource<Users>;
   displayedColumns = [' ', 'user_email', 'user_name', 'user_mob_no', 'Action'];
@@ -38,5 +40,23 @@ export class HomepageComponent implements OnInit {
       }
     )
   }
-
+  onUserDelete(item){
+    if(confirm("Are You Sure want to delete?"))
+    {
+    this._data.deleteUser(item.user_id).subscribe(
+      (data:any)=>{
+        this.dataSource.data.splice( this.dataSource.data.indexOf(item),1);
+        this.dataSource.paginator=this.paginator;
+      
+      }
+    );
+  }
+}
+onUserUpdate(item)
+{
+  alert("hello");
+  console.log(item.user_id);
+  this.router.navigate(['/updateuser',item.user_id]);
+}
+  
 }

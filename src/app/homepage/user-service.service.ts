@@ -21,6 +21,10 @@ import {HttpClient,HttpHeaders} from "@angular/common/http";
  {
       return this.http.get(this.url+id);
  }
+ deleteUser(item)
+ {
+   return this.http.delete(this.url+item.user_id)
+ }
  public url1:string="http://exptracker1.herokuapp.com/chagepass/";
 //  changePassword(id:string,item:Users)
 //  {

@@ -19,6 +19,7 @@ import { RemindersComponent } from './reminders/reminders.component';
 import { ExpDbService } from './exppage/exp-db.service';
 import { ReminderDbService } from './reminders/reminder-db.service';
 import { NotesDbService } from './notes/notes-db.service';
+import { UpdateUserComponent } from './update-user/update-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { NotesDbService } from './notes/notes-db.service';
     AddUserComponent,
     NotesComponent,
     RemindersComponent,
+    UpdateUserComponent,
  
   ],
   imports: [

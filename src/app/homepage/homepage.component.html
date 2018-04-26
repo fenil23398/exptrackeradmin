@@ -43,9 +43,10 @@
 
                     <ng-container matColumnDef="Action">
                         <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
-                        <mat-cell *matCellDef="let element"><button mat-icon-button>
+                        <mat-cell *matCellDef="let element">
+                            <button mat-icon-button (click)="onUserUpdate(element)">
                                       <mat-icon >edit</mat-icon>
-                                    </button><button mat-icon-button>
+                                    </button><button mat-icon-button (click)="onUserDelete(element)">
                                       <mat-icon >delete</mat-icon>
                                     </button> </mat-cell>
 
@@ -59,11 +60,12 @@
             </div><br><br>
             <div align="center">
                 <button routerLink="/adduser" mat-raised-button color="primary"><i class="fa fa-user"></i> Add Student</button>
-                <button mat-raised-button color="warn"><i class="fa fa-remove"> </i> Delete Selected</button>
+                <button mat-raised-button color="warn" (click)="deleteAll()"><i class="fa fa-remove"> </i> Delete Selected</button>
                 <button mat-raised-button color="primary" onClick="window.print()"><i class="fa fa-print"> </i> Print Data</button>
 
             </div>
         </div>
 
     </div>
+
 </div>

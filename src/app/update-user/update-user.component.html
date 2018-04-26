@@ -1,0 +1,24 @@
+<div id="page-wrapper"></div>
+
+
+<div class="clearfix">
+</div>
+
+<div id="rightContent">
+
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)">
+    </mat-form-field>
+    <div align="center">
+        <h1 class="page-header"><i class="fa fa-user"></i> Update User
+        </h1>
+    </div><br>
+
+
+
+    <div class="col-lg-12" align="center">
+
+        <button type="submit" (click)="UpdateUser()" mat-raised-button color="primary">Update</button>
+    </div>
+
+</div>
