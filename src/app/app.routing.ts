@@ -3,6 +3,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ExppageComponent } from './exppage/exppage.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 import { NotesComponent } from './notes/notes.component';
 import { RemindersComponent } from './reminders/reminders.component';
 import { SubcatComponent } from './subcat/subcat.component';

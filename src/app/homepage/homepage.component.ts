@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { UserServiceService } from './user-service.service';
 import { Users } from './user_model';
+import { UpdateUserComponent } from '../update-user/update-user.component';
 import { Router } from '@angular/router';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 
@@ -12,6 +13,7 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 
 })
 export class HomepageComponent implements OnInit {
+  public delarr:Users[];
   user: Users[] = [];
   dataSource: MatTableDataSource<Users>;
   displayedColumns = [' ', 'user_email', 'user_name', 'user_mob_no', 'Action'];

@@ -15,13 +15,6 @@
     </div><br>
 
     <mat-form-field class="example-full-width">
-        <input matInput ngModel required name="inpfname" type="text" placeholder="Enter Id" [(ngModel)]="eid" #inpid="ngModel">
-        <mat-error *ngIf="inpid.hasError('required')">Id is Required </mat-error>
-    </mat-form-field>
-    <br><br>
-
-
-    <mat-form-field class="example-full-width">
         <input matInput ngModel required email name="inpemail" type="email" placeholder="Email Id" [(ngModel)]="email" #inpemail="ngModel">
         <mat-error *ngIf="inpemail.hasError('required')">Email Id Is Required </mat-error>
         <mat-error *ngIf="inpemail.hasError('email')">Enter valid Email Id </mat-error>
