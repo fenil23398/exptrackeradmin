@@ -17,10 +17,7 @@ import {HttpClient,HttpHeaders} from "@angular/common/http";
   {
     return this.http.get(this.url);
   }
- getUsersById(id:string)
- {
-      return this.http.get(this.url+id);
- }
+ 
  public url1:string="http://exptracker1.herokuapp.com/chagepass/";
 //  changePassword(id:string,item:Users)
 //  {
@@ -34,4 +31,9 @@ import {HttpClient,HttpHeaders} from "@angular/common/http";
   {
     return this.http.put(this.url+id, fd)
   }
+  deleteUsers(id:string)
+  {
+    return this.http.delete(this.url+id,{headers:new HttpHeaders().set('Content-Type','application/json')});
+  }
+  
 }

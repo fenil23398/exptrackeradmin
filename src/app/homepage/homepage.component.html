@@ -45,7 +45,7 @@
                         <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
                         <mat-cell *matCellDef="let element"><button mat-icon-button>
                                       <mat-icon >edit</mat-icon>
-                                    </button><button mat-icon-button>
+                                    </button><button mat-icon-button (click)="onUserDelete(element)">
                                       <mat-icon >delete</mat-icon>
                                     </button> </mat-cell>
 

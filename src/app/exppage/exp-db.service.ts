@@ -20,9 +20,9 @@ export class ExpDbService {
     let body=JSON.stringify(item);
     return this.http.post(this.url,body,{headers:new HttpHeaders().set('Content-Type','application/json')});
   }
-   deleteSpends(item:Spends)
+   deleteSpends(id)
   {
-     return this.http.delete(this.url+item.expense_id,{headers:new HttpHeaders().set('Content-Type','application/json')});
+     return this.http.delete(this.url+id,{headers:new HttpHeaders().set('Content-Type','application/json')});
   }
   public url1:string="http://localhost:3000/spends/";
   getExpenseById(id:number)

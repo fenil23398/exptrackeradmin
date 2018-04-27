@@ -19,6 +19,10 @@ import { RemindersComponent } from './reminders/reminders.component';
 import { ExpDbService } from './exppage/exp-db.service';
 import { ReminderDbService } from './reminders/reminder-db.service';
 import { NotesDbService } from './notes/notes-db.service';
+import { CategoryComponent } from './category/category.component';
+import { SubcatComponent } from './subcat/subcat.component';
+import { CatdbService } from './category/catdb.service';
+import { SubcatdbService } from './subcat/subcatdb.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +32,9 @@ import { NotesDbService } from './notes/notes-db.service';
     AddUserComponent,
     NotesComponent,
     RemindersComponent,
+    CategoryComponent,
+    SubcatComponent,
+    
  
   ],
   imports: [
@@ -49,7 +56,9 @@ import { NotesDbService } from './notes/notes-db.service';
     UserServiceService,
     ExpDbService,
     ReminderDbService,
-    NotesDbService
+    NotesDbService,
+    CatdbService,
+    SubcatdbService
   ],
   bootstrap: [AppComponent]
 })

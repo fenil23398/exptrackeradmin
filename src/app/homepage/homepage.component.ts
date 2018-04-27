@@ -39,4 +39,17 @@ export class HomepageComponent implements OnInit {
     )
   }
 
+  onUserDelete(item){
+    if(confirm("Are You Sure want to delete?"))
+    {
+    this._data.deleteUsers(item.user_email).subscribe(
+      (data:any)=>{
+    
+        this.dataSource.data.splice( this.dataSource.data.indexOf(item),1);
+        this.dataSource.paginator=this.paginator;
+      
+      }
+    );
+  }
+}
 }

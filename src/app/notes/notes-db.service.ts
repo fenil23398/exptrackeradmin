@@ -11,9 +11,9 @@ export class NotesDbService {
   {
     return this.http.get(this.url);
   }
-    deleteNotes(item:Notes)
+  deleteNotes(id:number)
   {
-    return this.http.delete(this.url+item.notes_id,{headers:new HttpHeaders().set('Content-Type','application/json')});
+    return this.http.delete(this.url+id,{headers:new HttpHeaders().set('Content-Type','application/json')});
   }
   getNotesById(id:string){
       return this.http.get(this.url+id);

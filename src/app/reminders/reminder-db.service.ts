@@ -6,6 +6,10 @@ import { Reminder } from './reminder-model';
 export class ReminderDbService {
   public url:string="http://exptracker1.herokuapp.com/reminder/"
   constructor(public http: HttpClient) { }
+  getallReminders()
+  {
+    return this.http.get(this.url);
+  }
   getRemindersById(id:string)
   {
     return this.http.get(this.url+id);
@@ -15,9 +19,9 @@ export class ReminderDbService {
     let body=JSON.stringify(item);
     return this.http.post(this.url,body,{headers:new HttpHeaders().set('Content-Type','application/json')});
   }
-  deleteReminder(item:Reminder)
+  deleteReminder(id)
   {
-    return this.http.delete(this.url+item.rem_id,{headers:new HttpHeaders().set('Content-Type','application/json')});
+    return this.http.delete(this.url+id,{headers:new HttpHeaders().set('Content-Type','application/json')});
 
   }
   updateReminder(item:Reminder)
