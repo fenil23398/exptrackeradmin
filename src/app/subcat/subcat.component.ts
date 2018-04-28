@@ -11,6 +11,8 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 })
 export class SubcatComponent implements OnInit {
   scategories: subcategory[] = [];
+  public delarr:subcategory[]=[];
+  i:number=0;
   dataSource: MatTableDataSource<subcategory>;
   displayedColumns = [' ', 'sub_cat_name', 'icon_image','cat_name', 's_fk_user_email', 'Action'];
   @ViewChild(MatSort) sort: MatSort;
@@ -50,4 +52,49 @@ export class SubcatComponent implements OnInit {
   }
 
 }
+
+
+checkChange(item:subcategory)
+{
+ 
+    if(this.delarr.find(x=>x==item))
+    {
+      this.delarr.splice(this.delarr.indexOf(item),1);
+    }
+    else
+    {
+      this.delarr.push(item);
+    }
+    console.log(this.delarr);
+  
+}
+
+deleteAll()
+{
+  
+  if(confirm("Are You Sure want to delete?"))
+  {
+  
+    for(this.i=0;this.i<this.delarr.length;this.i++)
+   {
+    
+     this._data.deleteScategories(this.delarr[this.i].sub_cat_id).subscribe(
+    (data:any)=>{
+  
+      this.dataSource.data.splice( this.dataSource.data.indexOf(this.delarr[this.i]),1);
+      this.dataSource.paginator=this.paginator;
+     
+    }
+   
+  );
+
+    }
+    this.dataSource.paginator=this.paginator;
+    
+    this.delarr=[];
+   // window.location.reload();
+    this.router.navigate(["/subcategory"]);
+}
+}
+
 }

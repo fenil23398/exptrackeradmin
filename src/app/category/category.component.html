@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div id="page-wrapper">
     <div>
 
@@ -17,7 +18,7 @@
                 <mat-table #table [dataSource]="dataSource" matSort>
                     <ng-container matColumnDef=" ">
                         <mat-header-cell *matHeaderCellDef> </mat-header-cell>
-                        <mat-cell *matCellDef="let element"> <input type="checkbox"> </mat-cell>
+                        <mat-cell *matCellDef="let element"> <input type="checkbox" (change)="checkChange(element)"> </mat-cell>
                     </ng-container>
                     <ng-container matColumnDef="cat_name">
                         <mat-header-cell *matHeaderCellDef mat-sort-header>Category Name </mat-header-cell>
@@ -54,7 +55,7 @@
             </div><br><br>
             <div align="center">
                 <button routerLink="/adduser" mat-raised-button color="primary"><i class="fa fa-user"></i> Add Student</button>
-                <button mat-raised-button color="warn"><i class="fa fa-remove"> </i> Delete Selected</button>
+                <button mat-raised-button color="warn" (click)="deleteAll()"><i class="fa fa-remove"> </i> Delete Selected</button>
                 <button mat-raised-button color="primary" onClick="window.print()"><i class="fa fa-print"> </i> Print Data</button>
 
             </div>

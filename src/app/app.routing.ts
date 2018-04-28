@@ -8,8 +8,9 @@ import { NotesComponent } from './notes/notes.component';
 import { RemindersComponent } from './reminders/reminders.component';
 import { SubcatComponent } from './subcat/subcat.component';
 import { CategoryComponent } from './category/category.component';
+import { LoginComponent } from './login/login.component';
 const routing:Routes=[
-    {path: '',redirectTo:'/home',pathMatch:'full'},
+    {path: '',redirectTo:'/login',pathMatch:'full'},
     {path: 'home',component:HomepageComponent},
     {path: 'expenses',component:ExppageComponent},
     {path:'adduser',component:AddUserComponent},
@@ -17,5 +18,6 @@ const routing:Routes=[
      {path : 'reminders',component:RemindersComponent},
      {path : 'category',component:CategoryComponent},
      {path : 'subcategory',component:SubcatComponent},
+     {path : 'login',component:LoginComponent},
   ];
 export const routingarray=RouterModule.forRoot(routing);

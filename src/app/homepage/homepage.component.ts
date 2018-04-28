@@ -15,6 +15,7 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 export class HomepageComponent implements OnInit {
   public delarr:Users[];
   user: Users[] = [];
+  i:number=0;
   dataSource: MatTableDataSource<Users>;
   displayedColumns = [' ', 'user_email', 'user_name', 'user_mob_no', 'Action'];
   @ViewChild(MatSort) sort: MatSort;
@@ -53,5 +54,49 @@ export class HomepageComponent implements OnInit {
       }
     );
   }
+}
+
+
+checkChange(item:Users)
+{
+ 
+    if(this.delarr.find(x=>x==item))
+    {
+      this.delarr.splice(this.delarr.indexOf(item),1);
+    }
+    else
+    {
+      this.delarr.push(item);
+    }
+    console.log(this.delarr);
+  
+}
+
+deleteAll()
+{
+  
+  if(confirm("Are You Sure want to delete?"))
+  {
+  
+    for(this.i=0;this.i<this.delarr.length;this.i++)
+   {
+    
+     this._data.deleteUsers(this.delarr[this.i].user_email).subscribe(
+    (data:any)=>{
+  
+      this.dataSource.data.splice( this.dataSource.data.indexOf(this.delarr[this.i]),1);
+      this.dataSource.paginator=this.paginator;
+     
+    }
+   
+  );
+
+    }
+    this.dataSource.paginator=this.paginator;
+    
+    this.delarr=[];
+   // window.location.reload();
+    this.router.navigate(["/home"]);
+}
 }
 }

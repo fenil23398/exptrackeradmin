@@ -23,6 +23,10 @@ import { CategoryComponent } from './category/category.component';
 import { SubcatComponent } from './subcat/subcat.component';
 import { CatdbService } from './category/catdb.service';
 import { SubcatdbService } from './subcat/subcatdb.service';
+import { LoginComponent } from './login/login.component';
+import { LogindbService } from './login/logindb.service';
+import { SignupComponent } from './signup/signup.component';
+import { SignupdbService } from './signup/signupdb.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +38,8 @@ import { SubcatdbService } from './subcat/subcatdb.service';
     RemindersComponent,
     CategoryComponent,
     SubcatComponent,
+    LoginComponent,
+    SignupComponent,
     
  
   ],
@@ -58,7 +64,9 @@ import { SubcatdbService } from './subcat/subcatdb.service';
     ReminderDbService,
     NotesDbService,
     CatdbService,
-    SubcatdbService
+    SubcatdbService,
+    LogindbService,
+    SignupdbService
   ],
   bootstrap: [AppComponent]
 })

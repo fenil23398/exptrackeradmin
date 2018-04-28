@@ -12,6 +12,8 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 })
 export class CategoryComponent implements OnInit {
   categorys: category[] = [];
+  public delarr:category[]=[];
+  i:number=0;
   dataSource: MatTableDataSource<category>;
   displayedColumns = [' ', 'cat_name', 'cicon_image', 'fk_user_email', 'Action'];
   @ViewChild(MatSort) sort: MatSort;
@@ -50,5 +52,25 @@ export class CategoryComponent implements OnInit {
     );
   }
 }
+
+
+checkChange(item:category)
+{
+ 
+    if(this.delarr.find(x=>x==item))
+    {
+      this.delarr.splice(this.delarr.indexOf(item),1);
+    }
+    else
+    {
+      this.delarr.push(item);
+    }
+    console.log(this.delarr);
+  
+}
+
+
+
+
 
 }
