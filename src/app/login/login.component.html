@@ -3,7 +3,7 @@
         <h3 class="title1">SignIn Page</h3>
         <div class="widget-shadow">
             <div class="login-top">
-                <h4>Welcome back to ExpenseTracker AdminPanel ! <br> Not a Member? <a href="signup.html">  Sign Up »</a> </h4>
+                <h4>Welcome back to ExpenseTracker AdminPanel ! <br> Not a Member? <a (click)="onSignUp()">  Sign Up »</a> </h4>
             </div>
             <div class="login-body">
                 <form>
@@ -27,7 +27,7 @@
                                             <div class="form-group" align="left">
                                                 <label for="recipient-name" class="col-form-label" style="color:white;font-size:20px;">Type your email id:</label>
                                                 <mat-form-field class="example-full-width">
-                                                    <input matInput ngModel required email name="inpemail" type="email" style="font-size:20px;" [(ngModel)]="fgemail" #inpemail="ngModel">
+                                                    <input matInput ngModel required email name="inpemail" type="email" [(ngModel)]="fgemail" #inpemail="ngModel">
                                                     <mat-error *ngIf="inpemail.hasError('required')" style="font-size:20px;">enter email id</mat-error>
                                                     <mat-error *ngIf="inpemail.hasError('email')" style="font-size:20px;">enter valid email id</mat-error>
 
