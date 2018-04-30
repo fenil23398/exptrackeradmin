@@ -18,6 +18,7 @@ export class UpdateUserComponent implements OnInit {
   img:string;
   f:number=0;
   password:string;
+  public mails:string='';
   edpassword:any;
   selectedFile:File=null; 
   arr:Users[]=[];
@@ -25,6 +26,11 @@ export class UpdateUserComponent implements OnInit {
     public _activerouter:ActivatedRoute) { }
 
   ngOnInit() {
+    this.mails=localStorage.getItem('name'); 
+    if(this.mails=='')
+    {
+      this._r.navigate(['/login']);    
+    }
     this._Subscription=this._activerouter.params.subscribe(
       (para:any)=>{
         this.id=para['uid'];

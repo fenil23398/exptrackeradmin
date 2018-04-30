@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+email:string='';
+pass:any='';
   constructor() { }
 
   ngOnInit() {
@@ -14,6 +15,8 @@ export class NavbarComponent implements OnInit {
 
   onadd()
   {
-    
+    localStorage.setItem('name',this.email);
+    localStorage.setItem('pass',this.pass);
+     
   }
 }

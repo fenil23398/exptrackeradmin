@@ -17,6 +17,7 @@ export class AddUserComponent implements OnInit {
   mno:string;
   edpassword:any;
   img:string='defaultimg.png';
+  public mails:string='';
   selectedFile: File = null;
   constructor(public _data:UserServiceService,public _r:Router,public http:HttpClient) { }
   onFileSelected(value){
@@ -24,6 +25,12 @@ export class AddUserComponent implements OnInit {
    
   }
   ngOnInit() {
+    
+    this.mails=localStorage.getItem('name'); 
+    if(this.mails=='')
+    {
+      this._r.navigate(['/login']);    
+    }
   }
  add()
   {

@@ -14,6 +14,7 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 })
 export class HomepageComponent implements OnInit {
   public delarr:Users[];
+  public mails:string='';
   user: Users[] = [];
   i:number=0;
   dataSource: MatTableDataSource<Users>;
@@ -31,7 +32,11 @@ export class HomepageComponent implements OnInit {
   }
 
   ngOnInit() {
- 
+    this.mails=localStorage.getItem('name'); 
+    if(this.mails=='')
+    {
+      this.router.navigate(['/login']);    
+    }
     this._data.getAllUsers().subscribe(
       (data: any) => {
         this.user = data;

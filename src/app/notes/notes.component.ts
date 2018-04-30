@@ -13,6 +13,7 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 export class NotesComponent implements OnInit {
 notes:Notes[];
 i:number=0;
+public mails:string='';
 public delarr:Notes[]=[];
 dataSource: MatTableDataSource<Notes>;
 displayedColumns = [' ', 'fk_user_email', 'notes_desc', 'notes_date' , 'Action'];
@@ -27,6 +28,11 @@ applyFilter(filterValue: string) {
   constructor(public _data:NotesDbService,public router:Router) { }
 
   ngOnInit() {
+    this.mails=localStorage.getItem('name'); 
+    if(this.mails=='')
+    {
+      this.router.navigate(['/login']);    
+    }
     this._data.getAllNotes().subscribe(
       (data: any) => {
         this.notes = data;

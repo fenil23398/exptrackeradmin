@@ -14,6 +14,7 @@ export class RemindersComponent implements OnInit {
 reminder:Reminder[];
 public delarr:Reminder[]=[];
 i:number=0;
+public mails:string='';
 dataSource: MatTableDataSource<Reminder>;
 displayedColumns = [' ', 'fk_user_email', 'rem_date', 'rem_title','rem_desc', 'Action'];
 @ViewChild(MatSort) sort: MatSort;
@@ -27,6 +28,11 @@ applyFilter(filterValue: string) {
   public router:Router) { }
 
   ngOnInit() {
+    this.mails=localStorage.getItem('name'); 
+    if(this.mails=='')
+    {
+      this.router.navigate(['/login']);    
+    }
     this._data.getallReminders().subscribe(
       (data: any) => {
         this.reminder = data;

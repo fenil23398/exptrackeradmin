@@ -12,6 +12,7 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 export class ExppageComponent implements OnInit {
 spends:Spends[];
 i:number;
+public mails:string='';
 dataSource: MatTableDataSource<Spends>;
 public delarr:Spends[]=[];
 displayedColumns = [' ', 'fk_user_email', 'expense_date', 'expense_amt','sub_cat_name','Action'];
@@ -27,7 +28,11 @@ applyFilter(filterValue: string) {
   public router:Router) { }
 
   ngOnInit() {
-
+    this.mails=localStorage.getItem('name'); 
+    if(this.mails=='')
+    {
+      this.router.navigate(['/login']);    
+    }
     this._data.getALlSpends().subscribe(
       (data: any) => {
         this.spends = data;

@@ -14,6 +14,7 @@ export class CategoryComponent implements OnInit {
   categorys: category[] = [];
   public delarr:category[]=[];
   i:number=0;
+  public mails:string='';
   dataSource: MatTableDataSource<category>;
   displayedColumns = [' ', 'cat_name', 'cicon_image', 'fk_user_email', 'Action'];
   @ViewChild(MatSort) sort: MatSort;
@@ -28,7 +29,12 @@ export class CategoryComponent implements OnInit {
   public router:Router) { }
 
   ngOnInit() {
-
+    
+    this.mails=localStorage.getItem('name'); 
+    if(this.mails=='')
+    {
+      this.router.navigate(['/login']);    
+    }
     this._data.getAllCategories().subscribe(
       (data: any) => {
         this.categorys = data;
@@ -68,9 +74,4 @@ checkChange(item:category)
     console.log(this.delarr);
   
 }
-
-
-
-
-
 }

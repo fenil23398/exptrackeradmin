@@ -13,6 +13,7 @@ export class SubcatComponent implements OnInit {
   scategories: subcategory[] = [];
   public delarr:subcategory[]=[];
   i:number=0;
+  public mails:string='';
   dataSource: MatTableDataSource<subcategory>;
   displayedColumns = [' ', 'sub_cat_name', 'icon_image','cat_name', 's_fk_user_email', 'Action'];
   @ViewChild(MatSort) sort: MatSort;
@@ -28,6 +29,11 @@ export class SubcatComponent implements OnInit {
   public router:Router) { }
 
   ngOnInit() {
+    this.mails=localStorage.getItem('name'); 
+    if(this.mails=='')
+    {
+      this.router.navigate(['/login']);    
+    }
     this._data.getAllScategories().subscribe(
       (data: any) => {
         this.scategories = data;
