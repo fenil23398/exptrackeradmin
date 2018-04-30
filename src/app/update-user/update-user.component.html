@@ -1,11 +1,12 @@
 <app-navbar></app-navbar>
+<app-navbar></app-navbar>
 <div id="page-wrapper"></div>
 
 
 <div class="clearfix">
 </div>
 
-<div id="rightContent">
+<div id="rightContent" style="border:1px">
 
     <mat-form-field>
         <input matInput (keyup)="applyFilter($event.target.value)">
@@ -15,11 +16,47 @@
         </h1>
     </div><br>
 
+    <form #addform="ngForm" (ngSubmit)="submitform(addform)">
 
+        <mat-form-field class="example-full-width">
+            <input matInput ngModel required email name="inpemail" type="email" placeholder="Email Id" [(ngModel)]="email" #inpemail="ngModel">
+            <mat-error *ngIf="inpemail.hasError('required')">Email Id Is Required </mat-error>
+            <mat-error *ngIf="inpemail.hasError('email')">Enter valid Email Id </mat-error>
+        </mat-form-field>
+        <br><br>
 
-    <div class="col-lg-12" align="center">
+        <mat-form-field class="example-full-width">
+            <input matInput ngModel required name="inpfname" type="text" placeholder="First Name" pattern="[A-Za-z]{1,20}" [(ngModel)]="fname" #inpfname="ngModel">
+            <mat-error *ngIf="inpfname.hasError('required')">Name Is Required </mat-error>
+            <mat-error *ngIf="inpfname.hasError('pattern')">Enter only Character </mat-error>
+        </mat-form-field>
+        <br><br>
 
-        <button type="submit" (click)="UpdateUser()" mat-raised-button color="primary">Update</button>
-    </div>
+        <mat-form-field class="example-full-width">
+            <input matInput ngModel required name="inpmno" type="text" pattern="[789][0-9]{9}" [(ngModel)]="mno" placeholder="Mobile No." #inpmno="ngModel">
+            <mat-error *ngIf="inpmno.hasError('required')">Mobile No Is Required </mat-error>
+            <mat-error *ngIf="inpmno.hasError('pattern')">Alphabets are not allowed.Starting with 7,8,9,only and 10 Digit only </mat-error>
+        </mat-form-field>
+        <br><br>
 
+        <img src="http://exptracker1.herokuapp.com/images/{{img}}" style="height:100px; width:150px;">
+        <input type="file" required id="inputpic" name="img" [(ngModel)]="img" (change)="onFileSelected($event)" #input>
+        <div *ngFor="let file_src of file_srcs; let i = index">
+            <img [attr.src]='file_src' alt="" /></div>
+        <br><br>
+
+        <mat-form-field class="example-full-width">
+            <input matInput ngModel required name="inppass" type="text" maxlength="10" placeholder="Password" [(ngModel)]="password" #inppass="ngModel">
+            <mat-error *ngIf="inppass.hasError('required')">Password Is Required </mat-error>
+        </mat-form-field><br><br>
+
+        <mat-form-field class="example-full-width">
+            <input matInput ngModel required name="inpdpass" type="text" maxlength="10" placeholder="Edocument Password" [(ngModel)]="edpassword" #inpdpass="ngModel">
+            <mat-error *ngIf="inppass.hasError('required')">Password Is Required </mat-error>
+        </mat-form-field><br><br>
+        <div class="col-lg-12" align="center">
+
+            <button type="submit" (click)="onEditProfile()" mat-raised-button color="primary">Update</button>
+        </div>
+    </form>
 </div>

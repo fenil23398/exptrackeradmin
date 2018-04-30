@@ -1,0 +1,47 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    font-size: 20px;
+    padding-right: 20px;
+}
+
+.example-full-width {
+    width: 40%;
+    font-size: 18px;
+    padding-left: 0px;
+}
+
+.mat-radio-button~.mat-radio-button {
+    padding-right: 16px;
+}
+
+#rightContent {
+    float: right;
+    width: 75%;
+}
+
+.logo {
+    width: 40%;
+}
+
+.example-container {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 300px !important;
+}
+
+.example-header {
+    min-height: 64px !important;
+    padding: 8px 24px 0 !important;
+}
+
+.mat-form-field {
+    font-size: 14px !important;
+    width: 100% !important;
+}
+
+.mat-table {
+    overflow: auto !important;
+    max-height: 500px !important;
+}

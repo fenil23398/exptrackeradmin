@@ -21,6 +21,7 @@ const routing:Routes=[
      {path : 'subcategory',component:SubcatComponent},
      {path : 'login',component:LoginComponent},
      {path : 'signup',component:SignupComponent},
+     {path:'updateuser/:uid',component:UpdateUserComponent}
 
   ];
 export const routingarray=RouterModule.forRoot(routing);
