@@ -1,9 +1,9 @@
-<div id="page-wrapper">
+<!-- <div id="page-wrapper">
     <div class="main-page login-page ">
         <h3 class="title1">SignIn Page</h3>
         <div class="widget-shadow">
             <div class="login-top">
-                <h4>Welcome back to ExpenseTracker AdminPanel ! <br> Not a Member? <a href="signup.html">  Sign Up »</a> </h4>
+                <h4>Welcome back to ExpenseTracker AdminPanel ! </h4>
             </div>
             <div class="login-body">
                 <form>
@@ -55,4 +55,62 @@
         <div class="login-page-bottom">
         </div>
     </div>
-</div>
+</div> -->
+
+
+<div style="background-image:url(./assets/images/img1.jpg); height:700px; " >
+    <div id="page-wrapper">
+        <div class="main-page login-page">
+               
+    
+    <div class="box">
+           
+             
+            <div class="login-top">
+                    <h3 class="title1">SignIn Page</h3>
+                    <h4>Welcome back to ExpenseTracker AdminPanel ! </h4>
+                </div>
+        
+         <form action="" method="post" (ngSubmit)="taskSubmit()" #addform="ngForm">
+          <div class="group">      
+                <mat-form-field   class="example-full-width" >
+                                    <input
+                                    matInput
+                                    ngModel
+                                    required
+                                    email
+                                    name="emailid"
+                                     type="email"
+                                     placeholder="Email Id"
+                                     [(ngModel)]="email"
+                                     #emailid="ngModel" >
+                                     <mat-error *ngIf="emailid.hasError('required')" >Email Is Required</mat-error>
+                                     <mat-error *ngIf="emailid.hasError('email')" >Enter Valid Email</mat-error>
+                                
+                                  </mat-form-field>
+                            
+          </div>
+              <div class="group">  
+     <mat-form-field hintLabel="password should be atleast 6 char" class="example-full-width">
+                                    <input
+                                    matInput
+                                    ngModel
+                                    required
+                                    minlength="6"
+                                    name="inpPass"
+                                     type="password"
+                                     placeholder="Password"
+                                     [(ngModel)]="pass"
+                                     #inpPass="ngModel">
+                                     <mat-error *ngIf="inpPass.hasError('required')"  >Password Is Required </mat-error>
+                                     <mat-error *ngIf="!inpPass.hasError('required')" >Password atleast 6 character</mat-error>
+                                    <mat-hint align="end"> {{inpPass.value?.length}}/6 </mat-hint>
+                                  </mat-form-field>
+                                           
+                    </div>
+          <button id="buttonlogintoregister" type="submit" [disabled]="!addform.form.valid" (click)=" onlogin()">Login</button>
+        </form>
+        </div>
+        </div>
+    </div>
+    </div>

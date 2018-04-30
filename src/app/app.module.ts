@@ -5,7 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule,MatFormFieldModule,MatSortModule,MatInputModule
-,MatPaginatorModule,MatIconModule,MatTableModule,MatOptionModule} from '@angular/material';
+,MatPaginatorModule,MatIconModule,MatTableModule,MatOptionModule,
+MatSelectModule,MatRadioModule,MatDatepickerModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -55,7 +56,8 @@ import { SignupdbService } from './signup/signupdb.service';
     FormsModule,MatSortModule,MatInputModule,MatPaginatorModule,
     MatOptionModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule,MatRadioModule,MatDatepickerModule
   ],
  
   providers: [

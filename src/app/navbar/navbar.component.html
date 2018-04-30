@@ -28,10 +28,6 @@
             <a routerLink="/reminders"><i class="fa fa-table nav_icon"></i>Reminder Table</a>
             <!-- //nav-second-level -->
           </li>
-          <li>
-            <a ><i class="fa fa-envelope nav_icon"></i> Mail </a>
-            <!-- //nav-second-level -->
-          </li>
           
         </ul>
         <!-- //sidebar-collapse -->
@@ -69,7 +65,8 @@
               <div class="profile_img">	
                 <span class="prfil-img"><img src="images/a.png" alt=""> </span> 
                 <div class="user-name">
-                  <p style="color:#fff;">Wikolia</p>
+                  <p style="color:#fff;">
+                  <button routerLink="/login"  mat-raised-button  (click)="onadd()"><i class="fa fa-user"></i> Log Out</button></p>
                   <span style="color:#fff;">Administrator</span>
                 </div>
                 <i class="fa fa-angle-down lnr"></i>
@@ -77,11 +74,6 @@
                 <div class="clearfix"></div>	
               </div>	
             </a>
-            <ul class="dropdown-menu drp-mnu">
-              <li> <a ><i class="fa fa-cog"></i> Settings</a> </li> 
-              <li> <a ><i class="fa fa-user"></i> Profile</a> </li> 
-              <li> <a ><i class="fa fa-sign-out"></i> Logout</a> </li>
-            </ul>
           </li>
         </ul>
       </div>
