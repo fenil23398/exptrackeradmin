@@ -75,7 +75,7 @@ checkChange(item:Users)
 deleteAll()
 {
   
-  if(confirm("Are You Sure want to delete?"))
+  if(confirm('Are You Sure want to delete?'))
   {
   
     for(this.i=0;this.i<this.delarr.length;this.i++)
@@ -96,7 +96,11 @@ deleteAll()
     
     this.delarr=[];
    // window.location.reload();
-    this.router.navigate(["/home"]);
+    this.router.navigate(['/home']);
 }
+}
+onUserUpdate(item:Users)
+{
+  this.router.navigate(['/updateuser',item.user_email]);
 }
 }

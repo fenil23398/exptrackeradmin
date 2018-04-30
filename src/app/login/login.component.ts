@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { NgForm,FormControl } from '@angular/forms';
 import { UserServiceService } from '../homepage/user-service.service';
 import { Users } from '../homepage/user_model';
+import { SignupComponent } from '../signup/signup.component';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -49,5 +50,9 @@ export class LoginComponent implements OnInit {
       {
       }
     );
+  }
+  onSignUp()
+  {
+    this._r.navigate(['/signup']);
   }
   }

@@ -28,6 +28,7 @@ import { LoginComponent } from './login/login.component';
 import { LogindbService } from './login/logindb.service';
 import { SignupComponent } from './signup/signup.component';
 import { SignupdbService } from './signup/signupdb.service';
+import { UpdateUserComponent } from './update-user/update-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +42,7 @@ import { SignupdbService } from './signup/signupdb.service';
     SubcatComponent,
     LoginComponent,
     SignupComponent,
+    UpdateUserComponent
     
  
   ],

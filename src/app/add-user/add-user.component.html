@@ -2,7 +2,7 @@
 <div id="page-wrapper"></div>
 
 
-<div class="clearfix" >
+<div class="clearfix">
 </div>
 
 <div id="rightContent" style="border:1px">
@@ -47,7 +47,7 @@
     </mat-form-field><br><br>
 
     <mat-form-field class="example-full-width">
-        <input matInput ngModel required name="edpass" type="password" maxlength="10" placeholder="Edocument Password" [(ngModel)]="password" #inppass="ngModel">
+        <input matInput ngModel required name="inpdpass" type="password" maxlength="10" placeholder="Edocument Password" [(ngModel)]="edpassword" #inpdpass="ngModel">
         <mat-error *ngIf="inppass.hasError('required')">Password Is Required </mat-error>
     </mat-form-field><br><br>
     <div class="col-lg-12" align="center">

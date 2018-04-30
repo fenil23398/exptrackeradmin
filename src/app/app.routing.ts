@@ -9,6 +9,7 @@ import { RemindersComponent } from './reminders/reminders.component';
 import { SubcatComponent } from './subcat/subcat.component';
 import { CategoryComponent } from './category/category.component';
 import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 const routing:Routes=[
     {path: '',redirectTo:'/login',pathMatch:'full'},
     {path: 'home',component:HomepageComponent},
@@ -19,5 +20,8 @@ const routing:Routes=[
      {path : 'category',component:CategoryComponent},
      {path : 'subcategory',component:SubcatComponent},
      {path : 'login',component:LoginComponent},
+     {path : 'signup',component:SignupComponent},
+     {path:'updateuser/:uid',component:UpdateUserComponent}
+
   ];
 export const routingarray=RouterModule.forRoot(routing);
